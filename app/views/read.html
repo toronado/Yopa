@@ -1,0 +1,26 @@
+<ng-include src="'views/inc_header.html'"></ng-include>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<h1>Notes</h1>
+			<div class="row">
+				<div class="col-md-12">
+					<article id="noteCreate">
+						<header>
+							<a href="#/overview/" class="btn secondary">
+								<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	                  			<span>Overview</span>
+	                  		</a>
+	                  		<a href="#/create/" class="btn primary pull-right">
+	                  			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+	                  			<span>Add Note</span>
+	                  		</a>
+	                  	</header>
+                  		<hr>
+                  		<ng-include src="'views/inc_notes.html'"></ng-include>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

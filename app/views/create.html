@@ -1,0 +1,28 @@
+<ng-include src="'views/inc_header.html'"></ng-include>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<h1>Add Note</h1>
+			<div class="row">
+				<div class="col-md-12">
+					<article id="noteCreate">
+						<fieldset>
+							<textarea class="form-control" rows="6" data-ng-model="noteText" data-ng-click="warning=false"></textarea>
+							<div class="alert alert-danger animated fadeIn" role="alert" data-ng-show="warning">Type Something!</div>
+							<a href="#/read/" class="btn secondary">
+								<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+	                  			<span>Cancel</span>
+	                  		</a>
+	                  		<a href="" data-ng-click="addNote(noteText)" class="btn primary pull-right">
+	                  			<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+	                  			<span>Save</span>
+	                  		</a>
+	                  	</fieldset>
+                  		<hr>
+                  		<ng-include src="'views/inc_notes.html'"></ng-include>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

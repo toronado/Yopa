@@ -1,0 +1,220 @@
+$background-color: #F4F6F7;
+$font-family: Helvetica,Arial,sans-serif;
+
+$primary-text-color: #0F2B43;
+$secondary-text-color: #375167;
+
+$primary-btn-color: #1FBA97;
+
+$grey: #999999;
+$red: #c33;
+
+$link-color: #07c;
+
+$margin: 20px;
+$fw: 600;
+
+
+@function calculateRem($size) {
+  	$remSize: $size / 16px;
+  	@return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  	font-size: $size;
+  	font-size: calculateRem($size);
+}
+
+
+/* Foundation 
+-------------------------*/
+	html,
+	body {
+		padding: 0;
+		margin: 0;
+		-webkit-font-smoothing: antialiased;
+		font-family: $font-family;
+		background-color: $background-color;
+		@include font-size(16px);
+		color: $primary-text-color;
+	}
+
+	a {
+		color:$link-color;
+	}
+
+	a.btn {
+  		padding: 8px 16px;
+		font-weight: 600;
+		text-decoration: none;
+		border-radius: 0;
+  	}
+
+	a.btn.primary {
+		background-color: $primary-btn-color;
+		color:#fff;
+		text-transform: uppercase;
+		box-shadow: 0 2px 0 0 #199C7F;
+	}
+
+	a.btn.secondary {
+		border:$primary-text-color solid 2px;
+		color: $primary-text-color;
+	}
+
+	a.btn.remove {
+		padding: 0;
+		color: $red;
+	}
+
+	hr {
+		border-color:darken( $background-color, 5% );
+	}
+
+	h1 {
+		@include font-size(22px);
+		font-weight: $fw;
+		margin-bottom: $margin;
+	}
+
+	.navbar {
+		border-radius:0;
+		border:none;
+		.navbar-text {
+			margin:0 15px;
+			line-height: 49px;
+		}
+		.navbar-text,
+		.navbar-brand {
+			color:#fff;
+		}
+		a {
+			color: $grey;
+			text-decoration: none;
+		}
+		small a {
+			font-size: 0.75rem;
+		}
+		small a:hover {
+			color:white;
+		}
+	}
+
+/* Login 
+-------------------------*/
+	label {
+		display: block;
+		@include font-size(14px);
+		margin:0 auto 5px;
+		color:$secondary-text-color;
+	}
+	label.required:after { 
+		content:" *";
+		color: $red;
+	}
+
+	input {
+	    box-sizing: border-box;
+	    border: 1px solid darken($background-color, 12%);
+	    padding: $margin/2;
+	    color: $primary-text-color;
+	    width: 100%;
+	    outline: none;
+	    margin-bottom: $margin;
+	}
+
+	input.ng-invalid.ng-touched {
+    	border-color: $red;
+  	}
+
+  	input.ng-valid.ng-touched {
+    	border-color: darken($background-color, 12%);
+  	}
+
+/* Overview 
+-------------------------*/
+	.well {
+		background-color:#fff;
+		border-color: darken($background-color, 3%);
+		border-bottom:none;
+		box-shadow: 0 6px 5px -8px #333;
+		border-radius:6px;
+		table {
+			th {
+				background-color: darken($background-color, 3%);
+				border:none !important;
+			}
+			td {
+				color: $secondary-text-color;
+				font-weight: $fw;
+				@include font-size(14px);
+				border-top:none !important;
+				border-bottom: darken($background-color, 3%) solid 1px;
+			}
+			td.last {
+				width: 1px;
+	    		white-space: nowrap;
+	    		text-align: center;
+			}
+			.btn {
+				padding:0;
+				color: #c33;
+			}
+		}
+	}
+
+/* Read 
+-------------------------*/
+	.media {
+		img {
+			width: 50px;
+			margin-top: $margin/2;
+			margin-right: $margin;
+		}
+	}
+	.well {
+		h4 {
+			margin-bottom: $margin;
+			@include font-size(14px);
+			font-weight: $fw;
+			color: $primary-text-color;
+		}
+		.badge {
+			background:none;
+			@include font-size(13px);
+			color: $primary-text-color;
+		}
+		p {
+			@include font-size(14px);
+			color: $secondary-text-color;
+			line-height: 1.7;
+		}
+		p:before {
+			content:"\A";
+		    border-style: solid;
+		    border-width: 10px 15px 10px 0;
+		    border-color: transparent #fff transparent transparent;
+		    position: absolute;
+		    left: 66px;
+		    margin-top: -25px;
+		}
+	}
+
+/* Add 
+-------------------------*/
+	textarea.form-control {
+		margin-bottom: $margin;
+		border-radius:0 !important;
+		border-color: darken($background-color, 12%);
+		box-shadow: none;
+		padding:$margin/2;
+	}
+
+@media (max-width: 768px) {
+	.container-fluid {
+		padding:0;
+	}
+	.table-responsive .table {
+		margin-bottom: $margin;
+	}
+}

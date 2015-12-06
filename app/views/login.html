@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<h1>Login</h1>
+			<div class="row">
+				<div class="col-md-6">
+					<article>
+						<fieldset>
+							<label for="firstName" class="required">Username:</label>
+							<input type="text" data-ng-model="username" data-ng-click="warning=false" required="">
+							<label for="firstName" class="required">Password:</label>
+							<input type="password" data-ng-model="password" data-ng-click="warning=false" required="">
+							<div class="alert alert-danger animated fadeIn" role="alert" data-ng-show="warning">Enter <em>any</em> username and password</div>
+							<a href="" data-ng-click="login(username, password)" class="btn primary">
+	                  			<span>Login</span>
+	                  			<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+	                  		</a>
+						</fieldset>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

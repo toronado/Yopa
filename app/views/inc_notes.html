@@ -1,0 +1,16 @@
+<div class="media animated slideInUp" data-ng-repeat="note in notes">
+	<div class="media-left">
+		<a href="#">
+			<img class="media-object" data-ng-src="images/{{note.user}}.png" alt="{{note.firstname + ' ' + note.surname}}">
+		</a>
+	</div>
+	<div class="media-body">
+		<div class="well">
+			<h4 class="media-heading">
+				{{note.firstname}}
+				<span class="badge pull-right">{{note.date | prettyDate}}</span>
+			</h4>
+			<p>{{note.content}}</p>
+		</div>
+	</div>
+</div>
